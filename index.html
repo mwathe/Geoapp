@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Weather Search</title>
+<meta property="og:url"  content="https://www.your-domain.com/facebook.com" />
+<meta property="og:type"   content="website" />
+<meta property="og:title" content="share" />
+<meta property="og:description"   content="" />
+<meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+<link rel="stylesheet" type="text/css" href="index.css">
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkcYsJqIdzCSP_eMFAV7oSpgCObnZLTxpfwEHoboOy7LVuk25IOdt6nYaGk64HC5' async defer>
+</script>
+</head>
+<body>
+	<div class="header">
+		<h3>My Geo search for maps and weather</h3>
+		<div class="search">
+			<h3 class="error"></h3>
+			<input type="text" name="search" placeholder="Search...." id="place">
+			<span>
+				<button name="submit" id="sendWeather" >Search</button>
+			</span>
+		</div>
+
+		<div class="clearfix"></div>
+	    
+	</div>
+
+	<div class="row">
+		<div class="col-1">
+			<div class="items">
+				<ul>
+					<div id="fb-root"></div>
+					  <script>(function(d, s, id) {
+					    var js, fjs = d.getElementsByTagName(s)[0];
+					    if (d.getElementById(id)) return;
+					    js = d.createElement(s); js.id = id;
+					    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+					    fjs.parentNode.insertBefore(js, fjs);
+					  }(document, 'script', 'facebook-jssdk'));</script>
+
+					<p>
+						<div class="fb-share-button" 
+						    data-href="https://www.your-domain.com/facebook.com" 
+						    data-layout="button_count">
+						  </div>
+					</p>
+					<li> Place:<span id="placename"></span></li>
+					<li>Temperature</li>
+					<li id="cel"></li>
+					<li>Rainy and cloud state</li>
+					<li class="cloud"></li>
+					<li>wind speed</li>
+					<li class="speed"></li>
+					<li>Humidity</li>
+					<li class="humidity"></li>
+					<li>Wind direction</li>
+					<li class="direction"></li>
+					<li><button id="change" onclick="changeTemperatureSystem()">Convert Temperature</button></li>
+					
+					
+				</ul>
+			</div>
+		</div>
+		<div class="col-2">
+			<div class="map"></div>
+			<div id="placesCount"></div>
+		</div>
+
+	</div>
+	<div class="footer">
+		<footer>
+			<p>&copy; MWATHE 2019</p>
+		</footer>
+	</div>
+	<script src="jquery-3.4.1.js"></script>
+	<script src="index.js"></script>
+	<script src="indexMap.js"></script>
+</body>
+</html>
